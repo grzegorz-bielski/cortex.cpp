@@ -1,13 +1,12 @@
 #pragma once
 
 #include <json/json.h>
-#include <cmath>
-#include <iomanip>
 #include <limits>
 #include <sstream>
 #include <string>
 #include <vector>
 #include "utils/format_utils.h"
+
 namespace config {
 struct ModelConfig {
   std::string name;

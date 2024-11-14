@@ -2,14 +2,7 @@
 #include <drogon/HttpClient.h>
 #include <drogon/HttpResponse.h>
 #include <sys/stat.h>
-#include <algorithm>
-#include <fstream>
-#include <iostream>
-#include <ostream>
-#include <random>
-#include <regex>
 #include <string>
-#include <vector>
 #if defined(__linux__)
 #include <limits.h>
 #include <unistd.h>
@@ -80,5 +73,4 @@ inline std::string GetCurrentPath() {
 #endif
 }
 #endif
-
 }  // namespace cortex_utils

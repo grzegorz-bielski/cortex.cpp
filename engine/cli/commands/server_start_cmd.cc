@@ -24,8 +24,6 @@ bool TryConnectToServer(const std::string& host, int port) {
 }
 }  // namespace
 
-ServerStartCmd::ServerStartCmd() {}
-
 bool ServerStartCmd::Exec(const std::string& host, int port,
                           const std::optional<std::string>& log_level) {
   std::string log_level_;
@@ -115,7 +113,8 @@ bool ServerStartCmd::Exec(const std::string& host, int port,
     std::string p = cortex_utils::GetCurrentPath() + "/" + exe;
     execl(p.c_str(), exe.c_str(), "--start-server", "--config_file_path",
           get_config_file_path().c_str(), "--data_folder_path",
-          get_data_folder_path().c_str(), "--loglevel", log_level_.c_str(), (char*)0);
+          get_data_folder_path().c_str(), "--loglevel", log_level_.c_str(),
+          (char*)0);
   } else {
     // Parent process
     if (!TryConnectToServer(host, port)) {
